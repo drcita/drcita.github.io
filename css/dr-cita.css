@@ -1,3 +1,7 @@
+.footer { margin-top: 15px; color: white; }
+
+.footer a { color: white; font-weight: bold; }
+
 .country-selection a.country { display: block; border: solid 2px white; border-radius: 8px; padding: 15px; margin-bottom: 10px; color: white; background-color: #ffffff24; }
 
 .country-selection a.country .flag { width: 50px; display: inline-block; }
