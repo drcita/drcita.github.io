@@ -1,0 +1,12 @@
+{
+	"version": 3,
+	"file": "dr-cita.css",
+	"sources": [
+		"dr-cita.sass"
+	],
+	"sourcesContent": [
+		".country-selection {\n  a.country {\n    display: block;\n    border: solid 2px white;\n    border-radius: 8px;\n    padding: 15px;\n    margin-bottom: 10px;\n    color: white;\n    background-color: #ffffff24;\n    .flag {\n      width: 50px;\n      display: inline-block; }\n    .name {\n      display: inline-block;\n      width: 100px; }\n    &:hover {\n      background-color: #ffffff47;\n      cursor: pointer; } } }\n.person-selection {\n  .title {\n    color: white;\n    font-weight: bold;\n    margin-bottom: 15px;\n    display: block; }\n  a.person {\n    display: block;\n    border: solid 2px white;\n    border-radius: 8px;\n    padding: 15px;\n    margin-bottom: 10px;\n    color: white;\n    background-color: #ffffff24;\n    .icon {\n      width: 50px;\n      display: inline-block; }\n    .name {\n      display: inline-block;\n      width: 200px; }\n    &:hover {\n      background-color: #ffffff47;\n      cursor: pointer; } }\n  .country {\n    display: block;\n    margin-bottom: 15px;\n    .name {\n      color: white; } } }\n"
+	],
+	"names": [],
+	"mappings": "AAAA,AACE,kBADgB,CAChB,CAAC,AAAA,QAAQ,CAAC,EACR,OAAO,EAAE,KAAK,EACd,MAAM,EAAE,eAAe,EACvB,aAAa,EAAE,GAAG,EAClB,OAAO,EAAE,IAAI,EACb,aAAa,EAAE,IAAI,EACnB,KAAK,EAAE,KAAK,EACZ,gBAAgB,EAAE,SAAS,GASL;;AAjB1B,AASI,kBATc,CAChB,CAAC,AAAA,QAAQ,CAQP,KAAK,CAAC,EACJ,KAAK,EAAE,IAAI,EACX,OAAO,EAAE,YAAY,GAAG;;AAX9B,AAYI,kBAZc,CAChB,CAAC,AAAA,QAAQ,CAWP,KAAK,CAAC,EACJ,OAAO,EAAE,YAAY,EACrB,KAAK,EAAE,KAAK,GAAG;;AAdrB,AAeI,kBAfc,CAChB,CAAC,AAAA,QAAQ,AAcN,MAAM,CAAC,EACN,gBAAgB,EAAE,SAAS,EAC3B,MAAM,EAAE,OAAO,GAAG;;AACxB,AACE,iBADe,CACf,MAAM,CAAC,EACL,KAAK,EAAE,KAAK,EACZ,WAAW,EAAE,IAAI,EACjB,aAAa,EAAE,IAAI,EACnB,OAAO,EAAE,KAAK,GAAG;;AALrB,AAME,iBANe,CAMf,CAAC,AAAA,OAAO,CAAC,EACP,OAAO,EAAE,KAAK,EACd,MAAM,EAAE,eAAe,EACvB,aAAa,EAAE,GAAG,EAClB,OAAO,EAAE,IAAI,EACb,aAAa,EAAE,IAAI,EACnB,KAAK,EAAE,KAAK,EACZ,gBAAgB,EAAE,SAAS,GASL;;AAtB1B,AAcI,iBAda,CAMf,CAAC,AAAA,OAAO,CAQN,KAAK,CAAC,EACJ,KAAK,EAAE,IAAI,EACX,OAAO,EAAE,YAAY,GAAG;;AAhB9B,AAiBI,iBAjBa,CAMf,CAAC,AAAA,OAAO,CAWN,KAAK,CAAC,EACJ,OAAO,EAAE,YAAY,EACrB,KAAK,EAAE,KAAK,GAAG;;AAnBrB,AAoBI,iBApBa,CAMf,CAAC,AAAA,OAAO,AAcL,MAAM,CAAC,EACN,gBAAgB,EAAE,SAAS,EAC3B,MAAM,EAAE,OAAO,GAAG;;AAtBxB,AAuBE,iBAvBe,CAuBf,QAAQ,CAAC,EACP,OAAO,EAAE,KAAK,EACd,aAAa,EAAE,IAAI,GAEA;;AA3BvB,AA0BI,iBA1Ba,CAuBf,QAAQ,CAGN,KAAK,CAAC,EACJ,KAAK,EAAE,KAAK,GAAG"
+}
