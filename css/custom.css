@@ -69,6 +69,16 @@ a:focus{
 	z-index: 3;
 }
 
+.document-box{
+	padding: 15px;
+	width: 100%;
+	text-align: left;
+	position: relative;
+	z-index: 3;
+	color: black;
+	background-color: #ffffff96;
+}
+
 .logo{
 	text-align: center;
 }
