@@ -1,0 +1,697 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Dr.Cita API</title>
+    <style type="text/css">
+      body {
+	font-family: Trebuchet MS, sans-serif;
+	font-size: 15px;
+	color: #444;
+	margin-right: 24px;
+}
+
+h1	{
+	font-size: 25px;
+}
+h2	{
+	font-size: 20px;
+}
+h3	{
+	font-size: 16px;
+	font-weight: bold;
+}
+hr	{
+	height: 1px;
+	border: 0;
+	color: #ddd;
+	background-color: #ddd;
+}
+
+.app-desc {
+  clear: both;
+  margin-left: 20px;
+}
+.param-name {
+  width: 100%;
+}
+.license-info {
+  margin-left: 20px;
+}
+
+.license-url {
+  margin-left: 20px;
+}
+
+.model {
+  margin: 0 0 0px 20px;
+}
+
+.method {
+  margin-left: 20px;
+}
+
+.method-notes	{
+	margin: 10px 0 20px 0;
+	font-size: 90%;
+	color: #555;
+}
+
+pre {
+  padding: 10px;
+  margin-bottom: 2px;
+}
+
+.http-method {
+ text-transform: uppercase;
+}
+
+pre.get {
+  background-color: #0f6ab4;
+}
+
+pre.post {
+  background-color: #10a54a;
+}
+
+pre.put {
+  background-color: #c5862b;
+}
+
+pre.delete {
+  background-color: #a41e22;
+}
+
+.huge	{
+	color: #fff;
+}
+
+pre.example {
+  background-color: #f3f3f3;
+  padding: 10px;
+  border: 1px solid #ddd;
+}
+
+code {
+  white-space: pre;
+}
+
+.nickname {
+  font-weight: bold;
+}
+
+.method-path {
+  font-size: 1.5em;
+  background-color: #0f6ab4;
+}
+
+.up {
+  float:right;
+}
+
+.parameter {
+  width: 500px;
+}
+
+.param {
+  width: 500px;
+  padding: 10px 0 0 20px;
+  font-weight: bold;
+}
+
+.param-desc {
+  width: 700px;
+  padding: 0 0 0 20px;
+  color: #777;
+}
+
+.param-type {
+  font-style: italic;
+}
+
+.param-enum-header {
+width: 700px;
+padding: 0 0 0 60px;
+color: #777;
+font-weight: bold;
+}
+
+.param-enum {
+width: 700px;
+padding: 0 0 0 80px;
+color: #777;
+font-style: italic;
+}
+
+.field-label {
+  padding: 0;
+  margin: 0;
+  clear: both;
+}
+
+.field-items	{
+	padding: 0 0 15px 0;
+	margin-bottom: 15px;
+}
+
+.return-type {
+  clear: both;
+  padding-bottom: 10px;
+}
+
+.param-header {
+  font-weight: bold;
+}
+
+.method-tags {
+  text-align: right;
+}
+
+.method-tag {
+  background: none repeat scroll 0% 0% #24A600;
+  border-radius: 3px;
+  padding: 2px 10px;
+  margin: 2px;
+  color: #FFF;
+  display: inline-block;
+  text-decoration: none;
+}
+
+    </style>
+  </head>
+  <body>
+  <h1>Dr.Cita API</h1>
+    <div class="app-desc">This is the first specificaction of Dr.Cita API, it is not functional right now, but offers you an endpoints structure for consuming some resources including their parameter, object and response specifications</div>
+    <div class="app-desc">Author: <a href="https://analisistem.com">https://analisistem.com</a></div>
+    <div class="app-desc">Contact Info: <a href="development@analisistem.com">development@analisistem.com</a></div>
+    <div class="app-desc">Version: 1.0.0</div>
+    <div class="app-desc">BasePath:/v1</div>
+    <div class="license-info">All rights reserved - Analisistem</div>
+    <div class="license-url">https://app.drcita.co/terms-and-conditions/</div>
+  <h2>Access</h2>
+    <ol>
+      <li>APIKey KeyParamName:api_key KeyInQuery:false KeyInHeader:true</li>
+    </ol>
+
+  <h2><a name="__Methods">Methods</a></h2>
+  [ Jump to <a href="#__Models">Models</a> ]
+
+  <h3>Table of Contents </h3>
+  <div class="method-summary"></div>
+  <h4><a href="#Doctor">Doctor</a></h4>
+  <ul>
+  <li><a href="#getFilteredDoctors"><code><span class="http-method">get</span> /medical/doctors/search</code></a></li>
+  </ul>
+  <h4><a href="#Entity">Entity</a></h4>
+  <ul>
+  <li><a href="#getEntities"><code><span class="http-method">get</span> /providers/entities</code></a></li>
+  <li><a href="#getPlansByEntity"><code><span class="http-method">get</span> /providers/entities/{entity_id}/plans</code></a></li>
+  </ul>
+  <h4><a href="#Speciality">Speciality</a></h4>
+  <ul>
+  <li><a href="#getSpecialities"><code><span class="http-method">get</span> /medical/specialities</code></a></li>
+  <li><a href="#getSubspecialitiesBySpeciality"><code><span class="http-method">get</span> /medical/specialities/{speciality_id}/subspecialities</code></a></li>
+  </ul>
+
+  <h1><a name="Doctor">Doctor</a></h1>
+  <div class="method"><a name="getFilteredDoctors"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /medical/doctors/search</code></pre></div>
+    <div class="method-summary">Get all medical doctor using filters (<span class="nickname">getFilteredDoctors</span>)</div>
+    <div class="method-notes"></div>
+
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="header">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+
+    <h3 class="field-label">Request headers</h3>
+    <div class="field-items">
+
+    </div>  <!-- field-items -->
+
+    <h3 class="field-label">Query parameters</h3>
+    <div class="field-items">
+      <div class="param">appointment_type (required)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; type of appointment, 1: face-toface, 2: teleconsulting, 3: both format: hex24</div><div class="param">city_code (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; city code including both state and city DANE codes separated by a dash, ie 76-001 </div><div class="param">speciality_id (required)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; both speciality and subspeciality ids are allowed here </div><div class="param">plan_id (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; plan id </div>
+    </div>  <!-- field-items -->
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      array[<a href="#Doctor">Doctor</a>]
+
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>[ {
+  "rating" : 0.0,
+  "last_name" : "Doe",
+  "id" : "5edd7eadb0e3fe15292f3b24",
+  "title" : "Dr.",
+  "thumbnail_url" : "https://s3-us-east-2.amazonaws.com/drcita-production/uploads/public/co/entity/doctors/photos/5bb/d37/f09/dc1/903/3e5/153/f5f/common/foto_thumb.jpg?1554591421",
+  "first_name" : "John",
+  "url" : "https://co.drcita.co/scheduling/doctors/MjAyMC0wNS0yMyAyMjo1NzowOSAtMDUwMCs1ZWM5ZjA5NWU2NGQxZTEyOGE2ZWY0NTUrICsx",
+  "about_me" : "Especialista en cirugia refractiva de la universidad de Oxford"
+}, {
+  "rating" : 0.0,
+  "last_name" : "Doe",
+  "id" : "5edd7eadb0e3fe15292f3b24",
+  "title" : "Dr.",
+  "thumbnail_url" : "https://s3-us-east-2.amazonaws.com/drcita-production/uploads/public/co/entity/doctors/photos/5bb/d37/f09/dc1/903/3e5/153/f5f/common/foto_thumb.jpg?1554591421",
+  "first_name" : "John",
+  "url" : "https://co.drcita.co/scheduling/doctors/MjAyMC0wNS0yMyAyMjo1NzowOSAtMDUwMCs1ZWM5ZjA5NWU2NGQxZTEyOGE2ZWY0NTUrICsx",
+  "about_me" : "Especialista en cirugia refractiva de la universidad de Oxford"
+} ]</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="header">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    successful operation
+
+    <h4 class="field-label">400</h4>
+    Invalid country value
+        <a href="#"></a>
+    <h4 class="field-label">403</h4>
+    Forbidden country value
+        <a href="#"></a>
+    <h4 class="field-label">404</h4>
+    some required object was not found
+        <a href="#Error">Error</a>
+  </div> <!-- method -->
+  <hr/>
+  <h1><a name="Entity">Entity</a></h1>
+  <div class="method"><a name="getEntities"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /providers/entities</code></pre></div>
+    <div class="method-summary">Get all provider entities by country (<span class="nickname">getEntities</span>)</div>
+    <div class="method-notes"></div>
+
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="header">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+
+    <h3 class="field-label">Request headers</h3>
+    <div class="field-items">
+
+    </div>  <!-- field-items -->
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      array[<a href="#Entity">Entity</a>]
+
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>[ {
+  "plans" : [ {
+    "name" : "Preferencial",
+    "id" : "5edd7eadb0e3fe15292f3b24",
+    "entity_id" : "5edd7eadb0e3fe15292f3b24"
+  }, {
+    "name" : "Preferencial",
+    "id" : "5edd7eadb0e3fe15292f3b24",
+    "entity_id" : "5edd7eadb0e3fe15292f3b24"
+  } ],
+  "name" : "Sura EPS",
+  "id" : "5edd7eadb0e3fe15292f3b24"
+}, {
+  "plans" : [ {
+    "name" : "Preferencial",
+    "id" : "5edd7eadb0e3fe15292f3b24",
+    "entity_id" : "5edd7eadb0e3fe15292f3b24"
+  }, {
+    "name" : "Preferencial",
+    "id" : "5edd7eadb0e3fe15292f3b24",
+    "entity_id" : "5edd7eadb0e3fe15292f3b24"
+  } ],
+  "name" : "Sura EPS",
+  "id" : "5edd7eadb0e3fe15292f3b24"
+} ]</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="header">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    successful operation
+
+    <h4 class="field-label">400</h4>
+    Invalid country value
+        <a href="#"></a>
+    <h4 class="field-label">403</h4>
+    Forbidden country value
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="getPlansByEntity"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /providers/entities/{entity_id}/plans</code></pre></div>
+    <div class="method-summary">Get all provider plans by entity (<span class="nickname">getPlansByEntity</span>)</div>
+    <div class="method-notes"></div>
+
+    <h3 class="field-label">Path parameters</h3>
+    <div class="field-items">
+      <div class="param">entity_id (required)</div>
+
+      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; ID of entity to return plans format: hex24</div>
+    </div>  <!-- field-items -->
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="header">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+
+    <h3 class="field-label">Request headers</h3>
+    <div class="field-items">
+
+    </div>  <!-- field-items -->
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      array[<a href="#Plan">Plan</a>]
+
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>[ {
+  "name" : "Preferencial",
+  "id" : "5edd7eadb0e3fe15292f3b24",
+  "entity_id" : "5edd7eadb0e3fe15292f3b24"
+}, {
+  "name" : "Preferencial",
+  "id" : "5edd7eadb0e3fe15292f3b24",
+  "entity_id" : "5edd7eadb0e3fe15292f3b24"
+} ]</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="header">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    successful operation
+
+    <h4 class="field-label">400</h4>
+    Invalid country value
+        <a href="#"></a>
+    <h4 class="field-label">403</h4>
+    Forbidden country value
+        <a href="#"></a>
+    <h4 class="field-label">404</h4>
+    Entity not found
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <h1><a name="Speciality">Speciality</a></h1>
+  <div class="method"><a name="getSpecialities"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /medical/specialities</code></pre></div>
+    <div class="method-summary">Get all medical specialities by country (<span class="nickname">getSpecialities</span>)</div>
+    <div class="method-notes"></div>
+
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="header">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+
+    <h3 class="field-label">Request headers</h3>
+    <div class="field-items">
+
+    </div>  <!-- field-items -->
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      array[<a href="#Speciality">Speciality</a>]
+
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>[ {
+  "code" : "00001",
+  "name" : "Oftalmología",
+  "description" : "Diagnóstico y tratamiento de enfermedades de los ojos.",
+  "id" : "5edd7eadb0e3fe15292f3b24"
+}, {
+  "code" : "00001",
+  "name" : "Oftalmología",
+  "description" : "Diagnóstico y tratamiento de enfermedades de los ojos.",
+  "id" : "5edd7eadb0e3fe15292f3b24"
+} ]</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="header">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    successful operation
+
+    <h4 class="field-label">400</h4>
+    Invalid country value
+        <a href="#"></a>
+    <h4 class="field-label">403</h4>
+    Forbidden country value
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="getSubspecialitiesBySpeciality"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /medical/specialities/{speciality_id}/subspecialities</code></pre></div>
+    <div class="method-summary">Get all medical subspecialities by speciality (<span class="nickname">getSubspecialitiesBySpeciality</span>)</div>
+    <div class="method-notes"></div>
+
+    <h3 class="field-label">Path parameters</h3>
+    <div class="field-items">
+      <div class="param">speciality_id (required)</div>
+
+      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; ID of entity to return plans format: hex24</div>
+    </div>  <!-- field-items -->
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="header">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+
+    <h3 class="field-label">Request headers</h3>
+    <div class="field-items">
+
+    </div>  <!-- field-items -->
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      array[<a href="#Subspeciality">Subspeciality</a>]
+
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>[ {
+  "code" : "00008",
+  "parent_id" : "5edd7eadb0e3fe15292f3b24",
+  "name" : "Retina Vítreo Uveitis",
+  "description" : "Enfermedades de la retina.",
+  "id" : "5edd7eadb0e3fe15292f3b24"
+}, {
+  "code" : "00008",
+  "parent_id" : "5edd7eadb0e3fe15292f3b24",
+  "name" : "Retina Vítreo Uveitis",
+  "description" : "Enfermedades de la retina.",
+  "id" : "5edd7eadb0e3fe15292f3b24"
+} ]</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="header">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    successful operation
+
+    <h4 class="field-label">400</h4>
+    Invalid country value
+        <a href="#"></a>
+    <h4 class="field-label">403</h4>
+    Forbidden country value
+        <a href="#"></a>
+    <h4 class="field-label">404</h4>
+    Speciality not found
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+
+  <h2><a name="__Models">Models</a></h2>
+  [ Jump to <a href="#__Methods">Methods</a> ]
+
+  <h3>Table of Contents</h3>
+  <ol>
+    <li><a href="#ApiResponse"><code>ApiResponse</code> - </a></li>
+    <li><a href="#Doctor"><code>Doctor</code> - </a></li>
+    <li><a href="#Entity"><code>Entity</code> - </a></li>
+    <li><a href="#Error"><code>Error</code> - </a></li>
+    <li><a href="#Plan"><code>Plan</code> - </a></li>
+    <li><a href="#Speciality"><code>Speciality</code> - </a></li>
+    <li><a href="#Subspeciality"><code>Subspeciality</code> - </a></li>
+  </ol>
+
+  <div class="model">
+    <h3><a name="ApiResponse"><code>ApiResponse</code> - </a> <a class="up" href="#__Models">Up</a></h3>
+    <div class='model-description'></div>
+    <div class="field-items">
+      <div class="param">code (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span>  format: int32</div>
+<div class="param">type (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+<div class="param">message (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3><a name="Doctor"><code>Doctor</code> - </a> <a class="up" href="#__Models">Up</a></h3>
+    <div class='model-description'></div>
+    <div class="field-items">
+      <div class="param">id (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  format: hex24</div>
+          <div class="param-desc"><span class="param-type">example: 5edd7eadb0e3fe15292f3b24</span></div>
+<div class="param">first_name (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+          <div class="param-desc"><span class="param-type">example: John</span></div>
+<div class="param">last_name (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+          <div class="param-desc"><span class="param-type">example: Doe</span></div>
+<div class="param">title (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+          <div class="param-desc"><span class="param-type">example: Dr.</span></div>
+<div class="param">about_me (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+          <div class="param-desc"><span class="param-type">example: Especialista en cirugia refractiva de la universidad de Oxford</span></div>
+<div class="param">rating (optional)</div><div class="param-desc"><span class="param-type"><a href="#number">BigDecimal</a></span>  </div>
+          <div class="param-desc"><span class="param-type">example: 0.0</span></div>
+<div class="param">url (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+          <div class="param-desc"><span class="param-type">example: https://co.drcita.co/scheduling/doctors/MjAyMC0wNS0yMyAyMjo1NzowOSAtMDUwMCs1ZWM5ZjA5NWU2NGQxZTEyOGE2ZWY0NTUrICsx</span></div>
+<div class="param">thumbnail_url (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+          <div class="param-desc"><span class="param-type">example: https://s3-us-east-2.amazonaws.com/drcita-production/uploads/public/co/entity/doctors/photos/5bb/d37/f09/dc1/903/3e5/153/f5f/common/foto_thumb.jpg?1554591421</span></div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3><a name="Entity"><code>Entity</code> - </a> <a class="up" href="#__Models">Up</a></h3>
+    <div class='model-description'></div>
+    <div class="field-items">
+      <div class="param">id (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  format: hex24</div>
+          <div class="param-desc"><span class="param-type">example: 5edd7eadb0e3fe15292f3b24</span></div>
+<div class="param">name (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+          <div class="param-desc"><span class="param-type">example: Sura EPS</span></div>
+<div class="param">plans (optional)</div><div class="param-desc"><span class="param-type"><a href="#Plan">array[Plan]</a></span>  </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3><a name="Error"><code>Error</code> - </a> <a class="up" href="#__Models">Up</a></h3>
+    <div class='model-description'></div>
+    <div class="field-items">
+      <div class="param">status (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span>  </div>
+<div class="param">type (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+<div class="param">message (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3><a name="Plan"><code>Plan</code> - </a> <a class="up" href="#__Models">Up</a></h3>
+    <div class='model-description'></div>
+    <div class="field-items">
+      <div class="param">id (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  format: hex24</div>
+          <div class="param-desc"><span class="param-type">example: 5edd7eadb0e3fe15292f3b24</span></div>
+<div class="param">name (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+          <div class="param-desc"><span class="param-type">example: Preferencial</span></div>
+<div class="param">entity_id (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  format: hex24</div>
+          <div class="param-desc"><span class="param-type">example: 5edd7eadb0e3fe15292f3b24</span></div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3><a name="Speciality"><code>Speciality</code> - </a> <a class="up" href="#__Models">Up</a></h3>
+    <div class='model-description'></div>
+    <div class="field-items">
+      <div class="param">id (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  format: hex24</div>
+          <div class="param-desc"><span class="param-type">example: 5edd7eadb0e3fe15292f3b24</span></div>
+<div class="param">name (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+          <div class="param-desc"><span class="param-type">example: Oftalmología</span></div>
+<div class="param">code (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+          <div class="param-desc"><span class="param-type">example: 00001</span></div>
+<div class="param">description (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+          <div class="param-desc"><span class="param-type">example: Diagnóstico y tratamiento de enfermedades de los ojos.</span></div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3><a name="Subspeciality"><code>Subspeciality</code> - </a> <a class="up" href="#__Models">Up</a></h3>
+    <div class='model-description'></div>
+    <div class="field-items">
+      <div class="param">id (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  format: hex24</div>
+          <div class="param-desc"><span class="param-type">example: 5edd7eadb0e3fe15292f3b24</span></div>
+<div class="param">name (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+          <div class="param-desc"><span class="param-type">example: Retina Vítreo Uveitis</span></div>
+<div class="param">code (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+          <div class="param-desc"><span class="param-type">example: 00008</span></div>
+<div class="param">description (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+          <div class="param-desc"><span class="param-type">example: Enfermedades de la retina.</span></div>
+<div class="param">parent_id (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  format: hex24</div>
+          <div class="param-desc"><span class="param-type">example: 5edd7eadb0e3fe15292f3b24</span></div>
+    </div>  <!-- field-items -->
+  </div>
+  </body>
+</html>
