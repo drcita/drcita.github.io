@@ -55,7 +55,8 @@
   .header__right { gap: 0.75rem; }
 }
 @media (max-width: 480px) {
-  .header__inner { height: 60px; padding: 0 1rem; }
+  .container { padding: 0 1rem; }
+  .header__inner { height: 60px; }
   .header__logo img { height: 24px; }
   .header__right .btn--sm { padding: 7px 14px; font-size: 0.78rem; min-height: 34px; }
   .header__right { gap: 0.5rem; }
