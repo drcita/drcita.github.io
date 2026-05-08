@@ -1,0 +1,23 @@
+title: "Dr.Cita"
+description: "Software de gestión de citas médicas para profesionales de la salud en Colombia."
+url: "https://drcita.co"
+baseurl: ""
+lang: "es"
+
+booking_url: "https://co.drcita.co"
+formspree_endpoint: "https://formspree.io/contacto@drcita.co"
+
+sass:
+  style: compressed
+  sass_dir: _sass
+
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - node_modules
+  - vendor

@@ -1,0 +1,23 @@
+<header class="header" id="header">
+  <div class="container header__inner">
+    <a href="{{ '/' | relative_url }}" class="header__logo" aria-label="Dr.Cita — Inicio">
+      <img src="{{ '/assets/img/logo.png' | relative_url }}" alt="Dr.Cita" height="36">
+    </a>
+    <nav class="header__nav" aria-label="Navegación principal">
+      <a href="{{ '/' | relative_url }}" class="header__nav-link header__nav-link--active">Inicio</a>
+      <a href="#features" class="header__nav-link">Características</a>
+      <a href="#contact" class="header__nav-link">Precios</a>
+      <a href="#about" class="header__nav-link">Nosotros</a>
+      <a href="#contact" class="header__nav-link">Contacto</a>
+    </nav>
+    <div class="header__right">
+      <span class="header__lang" role="button" tabindex="0">ES | EN</span>
+      <a href="#contact" class="btn btn--primary btn--sm">Solicitar demo</a>
+    </div>
+    <button class="header__hamburger" aria-label="Abrir menú">
+      <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+        <path stroke-linecap="round" d="M4 6h16M4 12h16M4 18h16"/>
+      </svg>
+    </button>
+  </div>
+</header>

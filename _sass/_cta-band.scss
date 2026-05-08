@@ -1,0 +1,19 @@
+.cta-band {
+  padding: 5rem 0;
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 50%, #1b6e8a 100%);
+  position: relative; overflow: hidden; text-align: center;
+}
+.cta-band__orb { position: absolute; border-radius: 50%; filter: blur(100px); }
+.cta-band__orb--1 { width: 400px; height: 400px; top: -150px; left: -100px; background: rgba(33,150,243,0.15); }
+.cta-band__orb--2 { width: 300px; height: 300px; bottom: -100px; right: -50px; background: rgba(46,125,50,0.1); }
+.cta-band__inner { position: relative; z-index: 1; }
+.cta-band__title {
+  font-size: 2.5rem; font-weight: 800; color: var(--white);
+  margin-bottom: 1rem; letter-spacing: -0.5px;
+}
+.cta-band__text {
+  font-size: 1.15rem; color: rgba(255,255,255,0.75);
+  margin-bottom: 2rem; max-width: 500px; margin-left: auto; margin-right: auto;
+}
+
+@media (max-width: 768px) { .cta-band__title { font-size: 1.8rem; } }
